@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Register page for Admin,Lander,Borrower</title>
+    <style>
+        /* styles.css */
+body {
+
+font-family: Arial, sans-serif;
+background-image: url(images/bg3.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+margin: 0%;
+padding: 0;
+}
+h1{
+color:#e60606 ;
+font-weight: bold;
+font-style : italic;
+font-variant: small-caps;
+text-align: center;
+font-size:3em;
+}
+
+.container {
+max-width: 400px;
+margin: 0 auto;
+background-color: #fff;
+padding: 40px;
+border-radius: 8px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+margin-top: 50px;
+}
+
+form {
+display: flex;
+flex-direction: column;
+}
+
+label {
+margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"],
+select {
+width: 100%;
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+button {
+background-color: rgba(230, 151, 66, 0.853);
+color: rgb(0, 0, 0);
+padding: 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+font-size: 16px;
+}
+
+button:hover {
+background-color: #0a9bf6;
+}
+
+a {
+color: #c50101;
+text-decoration: none;
+}
+
+a:hover {
+text-decoration: underline;
+}
+    </style>
+</head>
+<body width="100%">
+    <h1>BANK REGISTRATION</h1>
+    <div width="40%" style="float: left;padding: 10px;">
+    <div class="container" >
+        <h2>User Registration</h2>
+        <form id="registrationForm">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+    
+            <label for="role">Role:</label>
+            <select id="role" name="role" required>
+                <option value="admin">Admin</option>
+                <option value="lender">Lender</option>
+                <option value="borrower">Borrower</option>
+            </select><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+    
+            <button type="submit">Register</button>
+        </form>
+        <p>Already registered? <a href="login.html">Login here</a></p>
+    </div>
+    </div>
+    <div width="60%">
+        <img src="images/bank1.jpg"width="80%" height="700px">
+
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

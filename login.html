@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login</title>
+    <style>
+        /* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #090c8cd1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: 10%;
+    padding: 0;
+}
+h1{
+    color:#11e606 ;
+    font-weight: bold;
+    font-style : italic;
+    font-variant: small-caps;
+    text-align: center;
+    font-size:3em;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    background-color: rgba(230, 151, 66, 0.853);
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #b0aeae;
+}
+
+a {
+    color: #0b0feb;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+    </style>
+</head>
+<body width="100%">
+    <div width="40%"style="float: left;padding: 10px;">
+    <h1>BANK LOGIN</h1>
+    <div class="container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <select id="role" name="role" required>
+                <option value="admin">Admin</option>
+                <option value="lender">Lender</option>
+                <option value="borrower">Borrower</option>
+            </select>
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required><br>
+    
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br>
+    
+            <button type="submit" >Login</button>
+        </form>
+        <p>Not registered yet? <a href="registerpage.html">Register here</a></p>
+    </div>
+    </div>
+    <div width="60%">
+        <img src="images/lg.png" width="70%" height="700px">
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+        
+
+            const username = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const role = document.getElementById('role').value;
+
+            if (role == 'admin') {
+                if (username == 'admin' && password == 'admin') {
+                    window.location.href = 'admin.html'; 
+                } else {
+                    alert('Admin login failed. Please check your credentials.');
+                }
+            } else if (role == 'borrower') {
+                if (username == 'borrower' && password == 'borrower') {
+                    window.location.href = 'borrowerlobby.html'; 
+                } else {
+                    alert('borrower login failed. Please check your credentials.');
+                }
+            }else if (role == 'lender') {
+                if (username == 'lender' && password == 'lender') {
+                    window.location.href = 'lenderlobby.html'; 
+                } else {
+                    alert('lender login failed. Please check your credentials.');
+                }
+            }
+        });
+        </script>
+</body>
+</html>
